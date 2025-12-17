@@ -1,0 +1,93 @@
+# Build results
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa]ny [Cc]pu/
+[Ll]og/
+
+# Visual Studio files
+.vs/
+.vscode/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider / VS Code
+.idea/
+
+# Resharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+## =========================
+## ASP.NET / Blazor
+## =========================
+
+# wwwroot generated files (Blazor WASM)
+wwwroot/_framework/
+wwwroot/_content/
+wwwroot/service-worker-assets.js
+
+# Published output
+publish/
+app.publish/
+
+## =========================
+## Environment / Secrets
+## =========================
+
+# App settings (local only)
+appsettings.Development.json
+appsettings.Local.json
+
+# User secrets
+secrets.json
+
+## =========================
+## SQL / Database
+## =========================
+
+# Database files
+*.mdf
+*.ldf
+*.ndf
+*.bak
+
+## =========================
+## Logs
+## =========================
+
+*.log
+
+## =========================
+## OS files
+## =========================
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Mac
+.DS_Store
+
+## =========================
+## Node (Blazor WASM agar npm use ho)
+## =========================
+
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+## =========================
+## Others
+## =========================
+
+*.tmp
+*.temp
