@@ -14,15 +14,15 @@ namespace BlazorApp1.Shared.Dtos
         [Required(ErrorMessage = "Email is required")]
         [EmailAddress(ErrorMessage = "Invalid email format")]
         public string Email { get; set; } = string.Empty;
-        
+
         //gender
         [Required(ErrorMessage = "Gender is required")]
         public string Gender { get; set; } = "Other";
-        
+
         //phone number
         [Phone(ErrorMessage = "Please enter a valid phone number")]
         public string? PhoneNumber { get; set; }
-        
+
         //date
         [Required(ErrorMessage = "Date is required")]
         public DateTime Date { get; set; } = DateTime.Today;
@@ -30,4 +30,4 @@ namespace BlazorApp1.Shared.Dtos
         public bool Verify { get; set; }
     }
 
-    }
+}
