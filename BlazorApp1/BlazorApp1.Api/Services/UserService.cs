@@ -1,4 +1,5 @@
 ﻿using BlazorApp1.Api.Data;
+using BlazorApp1.Api.Security;
 using BlazorApp1.Interfaces;
 using BlazorApp1.Shared.Dtos;
 
@@ -22,6 +23,12 @@ namespace BlazorApp1.Services
             if (_context.FormData.Any(u => u.Email.ToLower() == userData.Email.ToLower()))
                 throw new InvalidOperationException("User already exists");
 
+            userData.PasswordHash = PasswordHasher.HashPassword(userData.Password);
+            if (string.IsNullOrWhiteSpace(userData.Role))
+            {
+                userData.Role = "User";
+            }
+
             _context.FormData.Add(userData);
             _context.SaveChanges();
         }
@@ -32,7 +39,14 @@ namespace BlazorApp1.Services
             if (existingUser == null) return false;
 
             existingUser.Name = userData.Name;
-            existingUser.Password = userData.Password;
+            if (!string.IsNullOrWhiteSpace(userData.Password))
+            {
+                existingUser.PasswordHash = PasswordHasher.HashPassword(userData.Password);
+            }
+            if (!string.IsNullOrWhiteSpace(userData.Role))
+            {
+                existingUser.Role = userData.Role;
+            }
             existingUser.Url = userData.Url;
             existingUser.Gender = userData.Gender;
             existingUser.PhoneNumber = userData.PhoneNumber;
